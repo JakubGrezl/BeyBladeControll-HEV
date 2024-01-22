@@ -9,7 +9,7 @@ public class naraz : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField]
-    private AudioClip[] hits;
+    private List<AudioClip> hits = new List<AudioClip>();
     private AudioSource audio;
 
     void Start()
@@ -35,7 +35,7 @@ public class naraz : MonoBehaviour
                     
                 }
             }
-            audio.clip = hits[Random.Range(0, hits.Length)];
+            audio.clip = hits[Random.Range(0, hits.Count)];
             audio.Play();
 
         }
